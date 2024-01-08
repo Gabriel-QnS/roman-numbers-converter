@@ -76,8 +76,17 @@ function executeApp(){
 }
 
 convertBtn.onclick = executeApp;
-document.addEventListener('keydown', (e) => {
-    if(e.key == 'Enter'){
-        executeApp();
-    }
-})
+input.addEventListener('focus', () => {
+    document.addEventListener('keydown', (e) => {
+        if(e.key == 'Enter'){
+            executeApp();
+        }
+    })
+});
+input.addEventListener('blur', () => {
+    document.removeEventListener('keydown', (e) => {
+        if(e.key == 'Enter'){
+            executeApp();
+        }
+    })
+});
