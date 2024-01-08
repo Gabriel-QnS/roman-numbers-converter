@@ -47,7 +47,7 @@ const outputText = document.querySelector('#output')
 function getInput(){
     let value = input.value;
     if (value == ''){
-        writeOutput('Please enter a number to convert')
+        writeOutput('Please enter a valid number')
         return false
     } else if (value < 1){
         writeOutput('Please enter a number greater than or equal to 1')
