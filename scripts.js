@@ -19,8 +19,14 @@ const romanSymbols = [
 ];
 
 function convert(num){
+    let workingNum = num; 
     let conversion = '';
-
+    while(workingNum != 0){
+        let key = findSymbolIndex(workingNum);
+        conversion += romanSymbols[key].symbol;
+        workingNum -= romanSymbols[key].value;
+    }
+    return conversion
 }
 
 function isValid(){//is input valid
@@ -38,4 +44,4 @@ function findSymbolIndex(num){//finds the next correct symbol to convert the giv
 };
 
 console.log(
-findSymbolIndex(100))
+convert(1888))
