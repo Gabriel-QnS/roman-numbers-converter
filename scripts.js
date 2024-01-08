@@ -1,7 +1,3 @@
-const input = document.querySelector('#number')
-const convertBtn = document.querySelector('#convert-btn')
-const outputText = document.querySelector('#output')
-
 const romanSymbols = [
     {symbol: "M", value: 1000},
     {symbol: "CM", value: 900},
@@ -43,5 +39,31 @@ function findSymbolIndex(num){//finds the next correct symbol to convert the giv
     }
 };
 
-console.log(
-convert(1888))
+//dom area
+const input = document.querySelector('#number')
+const convertBtn = document.querySelector('#convert-btn')
+const outputText = document.querySelector('#output')
+
+function getInput(){
+    let value = input.value;
+    console.log('Executed')
+    if (value == ''){
+        writeOutput('Please enter a number to convert')
+    } else if (value < 1){
+        writeOutput('Please enter a number greater than or equal to 1')
+    } else if (value >= 4000) {
+        writeOutput('Please enter a number less than or equal to 3999')
+    } else {
+        return value
+    }
+}
+
+function writeOutput(str){
+    outputText.innerText = str
+}
+
+function reportOutput(){
+    outputText.innerText = ``
+}
+
+convertBtn.onclick = getInput;
