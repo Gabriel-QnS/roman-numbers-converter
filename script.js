@@ -55,6 +55,8 @@ function getInput(){
     } else if (value >= 4000) {
         writeOutput('Please enter a number less than or equal to 3999')
         return false
+    } else if (value % 1 != 0){
+        return Math.round(value)
     } else {
         return value
     }
