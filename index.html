@@ -6,12 +6,13 @@
     <title>Roman Numeral Converter</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
-<body class="bg-dark">
-    <main>
-        <div class="outer-wrap">
-            <div class="app">
-            <h1>Convert an integer into a roman number</h1>
+<body class="bg-dark text-light">
+    <main class="d-flex justify-content-center align-items-start">
+        <div class="outer-wrap p-2 p-md-4">
+            <div class="app text-center">
+            <h1>Convert an integer into<br> <span id="roman">a roman number</span></h1>
             <input type="number" id="number">
             <button id="convert-btn">Convert</button>
             <div id="output"></div>
@@ -21,3 +22,6 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+<!-- attributions
+Photo by Griffin Wooldridge: https://www.pexels.com/photo/close-up-photo-of-a-statue-2676582/ -->
