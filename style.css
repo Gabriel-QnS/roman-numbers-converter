@@ -29,3 +29,13 @@ main{
 span, #output{
     font-family: var(--graduate);
 }
+
+article{
+    font-size: 90%;
+    opacity: 0.01;
+    transition: ease-in 0.5s;
+}
+
+article:hover, article:active{
+    opacity: 1;
+}
