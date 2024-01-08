@@ -46,13 +46,15 @@ const outputText = document.querySelector('#output')
 
 function getInput(){
     let value = input.value;
-    console.log('Executed')
     if (value == ''){
         writeOutput('Please enter a number to convert')
+        return false
     } else if (value < 1){
         writeOutput('Please enter a number greater than or equal to 1')
+        return false
     } else if (value >= 4000) {
         writeOutput('Please enter a number less than or equal to 3999')
+        return false
     } else {
         return value
     }
@@ -66,4 +68,16 @@ function reportOutput(){
     outputText.innerText = ``
 }
 
-convertBtn.onclick = getInput;
+function executeApp(){
+    const num = getInput();
+    if(num == false) return;
+    const converted = convert(num);
+    writeOutput(converted)
+}
+
+convertBtn.onclick = executeApp;
+document.addEventListener('keydown', (e) => {
+    if(e.key == 'Enter'){
+        executeApp();
+    }
+})
